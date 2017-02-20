@@ -3,6 +3,7 @@ package ua.com.shop.controller.user;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import ua.com.shop.service.BrandService;
@@ -16,28 +17,24 @@ public class IndexController {
 
 	@RequestMapping("/")
 	public String index(Model model) {
-model.addAttribute("brands", brandService.findAll());
+		
 
 		return "user-index";
-	}
+}
+//	@RequestMapping("/admin/brand")
+//	public String adminBrand() {
+//		return "admin-brand";
+//	}
 
 	@RequestMapping("/admin")
 	public String admin() {
 		return "admin-admin";
 	}
-
-	@RequestMapping("/user/registration")
-	public String registration() {
-		return "user-registration";
+	@RequestMapping("/user/contacts")
+	public String contacts() {
+		return "user-contacts";
 	}
-
-	@RequestMapping("/user/newhome")
-	public String newhome() {
-		return "user-newhome";
-	}
-
-	// @RequestMapping("/user/next")
-	// public String registratio1n() {
-	// return "user-next";
-	// }
+	
+	
 }
+	

@@ -2,9 +2,10 @@ package ua.com.shop.service;
 
 import java.util.List;
 
-import ua.com.shop.entity.Brand;
-import ua.com.shop.entity.Category;
+import org.springframework.stereotype.Service;
 
+import ua.com.shop.entity.Brand;
+@Service
 public interface BrandService {
 	void save(Brand brand);
 

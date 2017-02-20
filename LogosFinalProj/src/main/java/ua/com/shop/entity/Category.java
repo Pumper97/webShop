@@ -17,27 +17,46 @@ import javax.persistence.Table;
 public class Category {
 
 	@Id
-	// діє на одне поле
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
-	@Enumerated(EnumType.STRING)
-	private Season season;
-	@Enumerated(EnumType.STRING)
-	private Gender gender;
+
 	@OneToMany
 	private List<DodCategory> dodCategories;
 
 	public Category() {
 	}
 
-	public Category(String name, Season season, Gender gender,
-			List<DodCategory> dodCategories) {
+	public Category(String name, List<DodCategory> dodCategories) {
 		super();
 		this.name = name;
-		this.season = season;
-		this.gender = gender;
 		this.dodCategories = dodCategories;
-	};
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public List<DodCategory> getDodCategories() {
+		return dodCategories;
+	}
+
+	public void setDodCategories(List<DodCategory> dodCategories) {
+		this.dodCategories = dodCategories;
+	}
+
+	
 
 }

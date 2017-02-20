@@ -22,18 +22,29 @@ public class Users {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private String name;
+	private String fName;
+	private String lName;
 	private String email;
 	private String password;
-	@Enumerated(EnumType.STRING)
+	@ManyToOne
 	private Gender gender;
 
 	@ManyToMany
-	@JoinTable(name = "user_in_city", joinColumns = @JoinColumn(name = "id_user"), 
-	inverseJoinColumns = @JoinColumn(name = "id_city"))
+	@JoinTable(name = "user_in_city", joinColumns = @JoinColumn(name = "id_user"), inverseJoinColumns = @JoinColumn(name = "id_city"))
 	private List<City> cities;
 
 	public Users() {
-	};
+
+	}
+
+	public Users(String fName, String lName, String email, String password) {
+		super();
+		this.fName = fName;
+		this.lName = lName;
+		this.email = email;
+		this.password = password;
+		this.gender = gender;
+		this.cities = cities;
+	}
 
 }

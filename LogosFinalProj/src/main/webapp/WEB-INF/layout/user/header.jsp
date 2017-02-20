@@ -1,84 +1,263 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-	<head>
-	<link rel="stylesheet" href="/resources/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/resources/css/style.css">
-	<link rel="stylesheet" href="/resources/css/etalage.css">
-	<link rel="stylesheet" href="/resources/css/owl.carousel.css">
-	
-	</head>
-<div class="line"></div>
-<div class="header">
-	<div class="logo">
-		<a href="index.html"><img src="images/logo.png" alt=""></a>
-	</div>
-	<div class="header-top">
-		<div class="header-grid">
-			<ul class="header-in">
-				<li><a href="account.html">My Account </a></li>
-				<li><select class="in-drop">
-						<option value="Dollars" class="in-of">Dollars</option>
-						<option value="Euro" class="in-of">Euro</option>
-						<option value="Yen" class="in-of">Yen</option>
-				</select></li>
-			</ul>
-			<div class="search-box">
-				<div id="sb-search" class="sb-search">
-					<form>
-						<input class="sb-search-input"
-							placeholder="Enter your search term..." type="search"
-							name="search" id="search"> <input
-							class="sb-search-submit" type="submit" value=""> <span
-							class="sb-icon-search"> </span>
-					</form>
+    pageEncoding="UTF-8"%>
+
+<body>
+<div class="top-header">
+	<div class="container">
+		<div class="top-header-main">
+			<div class="col-md-4 top-header-left">
+				<div class="search-bar">
+					<input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+					<input type="submit" value="">
 				</div>
 			</div>
-			<!-- search-scripts -->
-			<script src="js/classie.js"></script>
-			<script src="js/uisearch.js"></script>
-			<script>
-				new UISearch(document.getElementById('sb-search'));
-			</script>
-			<!-- //search-scripts -->
-			<div class="online">
-				<a href="single.html">SHOP ONLINE</a>
+			<div class="col-md-4 top-header-middle">
+				<a href="index.html"><img src="/resources/images/logo-4.png" alt="" /></a>
 			</div>
-			<div class="clearfix"></div>
-		</div>
-		<div class="header-bottom">
-			<div class="h_menu4">
-				<!-- start h_menu4 -->
-				<a class="toggleMenu" href="#">Menu</a>
-				<ul class="nav">
-					<li class="active"><a href="product.html">Running</a></li>
-					<li><a href="product.html">Fitness</a></li>
-					<li><a href="product.html">Tennis</a></li>
-					<li><a href="product.html">Football</a></li>
-					<li><a href="product.html">Golf</a></li>
-					<li><a href="product.html">More <i> </i></a>
-						<ul>
-							<li><a href="contact.html">Contact</a></li>
-							<li><a href="account.html">Account</a></li>
-							<li><a href="register.html">Register</a></li>
-						</ul></li>
-				</ul>
-				<script type="text/javascript" src="js/nav.js"></script>
+			<div class="col-md-4 top-header-right">
+				<div class="cart box_1">
+						<a href="checkout.html">
+						<h3> <div class="total">
+							<span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div>
+							<img src="/resources/images/cart-1.png" alt="" />
+						</a>
+						<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
+						<div class="clearfix"> </div>
+					</div>
 			</div>
-			<!-- end h_menu4 -->
-			<ul class="header-bottom-in">
-				<li><select class="drop">
-						<option value="Dollars" class="in-of">Get Active</option>
-						<option value="Euro" class="in-of">Get Active1</option>
-						<option value="Yen" class="in-of">Get Active2</option>
-				</select></li>
-				<li><select class="drop">
-						<option value="Dollars" class="in-of">Community</option>
-						<option value="Euro" class="in-of">Community1</option>
-						<option value="Yen" class="in-of">Community2</option>
-				</select></li>
-			</ul>
 			<div class="clearfix"></div>
 		</div>
 	</div>
-	<div class="clearfix"></div>
 </div>
+<!--top-header-->
+	<!--bottom-header-->
+	<div class="header-bottom">
+		<div class="container">
+			<div class="top-nav">
+				<ul class="memenu skyblue"><li class="active"><a href="index.html">Home</a></li>
+					<li class="grid"><a href="#">Men</a>
+						<div class="mepanel">
+							<div class="row">
+								<div class="col1 me-one">
+									<h4>Shop</h4>
+									<ul>
+										<li><a href="products.html">New Arrivals</a></li>
+										<li><a href="products.html">Men</a></li>
+										<li><a href="products.html">Women</a></li>
+										<li><a href="products.html">Accessories</a></li>
+										<li><a href="products.html">Kids</a></li>
+										<li><a href="products.html">login</a></li>
+										<li><a href="products.html">Brands</a></li>
+										<li><a href="products.html">My Shopping Bag</a></li>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>Style Zone</h4>
+									<ul>
+										<li><a href="products.html">Men</a></li>
+										<li><a href="products.html">Women</a></li>
+										<li><a href="products.html">Brands</a></li>
+										<li><a href="products.html">Kids</a></li>
+										<li><a href="products.html">Accessories</a></li>
+										<li><a href="products.html">Style Videos</a></li>
+									</ul>	
+								</div>
+								<div class="col1 me-one">
+									<h4>Popular Brands</h4>
+									<ul>
+										<li><a href="products.html">Levis</a></li>
+										<li><a href="products.html">Persol</a></li>
+										<li><a href="products.html">Nike</a></li>
+										<li><a href="products.html">Edwin</a></li>
+										<li><a href="products.html">New Balance</a></li>
+										<li><a href="products.html">Jack & Jones</a></li>
+										<li><a href="products.html">Paul Smith</a></li>
+										<li><a href="products.html">Ray-Ban</a></li>
+										<li><a href="products.html">Wood Wood</a></li>
+									</ul>	
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="grid"><a href="#">Women</a>
+						<div class="mepanel">
+							<div class="row">
+								<div class="col1 me-one">
+									<h4>Shop</h4>
+									<ul>
+										<li><a href="products.html">New Arrivals</a></li>
+										<li><a href="products.html">Men</a></li>
+										<li><a href="products.html">Women</a></li>
+										<li><a href="products.html">Accessories</a></li>
+										<li><a href="products.html">Kids</a></li>
+										<li><a href="products.html">login</a></li>
+										<li><a href="products.html">Brands</a></li>
+										<li><a href="products.html">My Shopping Bag</a></li>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>Style Zone</h4>
+									<ul>
+										<li><a href="products.html">Men</a></li>
+										<li><a href="products.html">Women</a></li>
+										<li><a href="products.html">Brands</a></li>
+										<li><a href="products.html">Kids</a></li>
+										<li><a href="products.html">Accessories</a></li>
+										<li><a href="products.html">Style Videos</a></li>
+									</ul>	
+								</div>
+								<div class="col1 me-one">
+									<h4>Popular Brands</h4>
+									<ul>
+										<li><a href="products.html">Levis</a></li>
+										<li><a href="products.html">Persol</a></li>
+										<li><a href="products.html">Nike</a></li>
+										<li><a href="products.html">Edwin</a></li>
+										<li><a href="products.html">New Balance</a></li>
+										<li><a href="products.html">Jack & Jones</a></li>
+										<li><a href="products.html">Paul Smith</a></li>
+										<li><a href="products.html">Ray-Ban</a></li>
+										<li><a href="products.html">Wood Wood</a></li>
+									</ul>	
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="grid"><a href="#">Kids</a>
+						<div class="mepanel">
+							<div class="row">
+								<div class="col1 me-one">
+									<h4>Shop</h4>
+									<ul>
+										<li><a href="products.html">New Arrivals</a></li>
+										<li><a href="products.html">Men</a></li>
+										<li><a href="products.html">Women</a></li>
+										<li><a href="products.html">Accessories</a></li>
+										<li><a href="products.html">Kids</a></li>
+										<li><a href="products.html">login</a></li>
+										<li><a href="products.html">Brands</a></li>
+										<li><a href="products.html">My Shopping Bag</a></li>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>Style Zone</h4>
+									<ul>
+										<li><a href="products.html">Men</a></li>
+										<li><a href="products.html">Women</a></li>
+										<li><a href="products.html">Brands</a></li>
+										<li><a href="products.html">Kids</a></li>
+										<li><a href="products.html">Accessories</a></li>
+										<li><a href="products.html">Style Videos</a></li>
+									</ul>	
+								</div>
+								<div class="col1 me-one">
+									<h4>Popular Brands</h4>
+									<ul>
+										<li><a href="products.html">Levis</a></li>
+										<li><a href="products.html">Persol</a></li>
+										<li><a href="products.html">Nike</a></li>
+										<li><a href="products.html">Edwin</a></li>
+										<li><a href="products.html">New Balance</a></li>
+										<li><a href="products.html">Jack & Jones</a></li>
+										<li><a href="products.html">Paul Smith</a></li>
+										<li><a href="products.html">Ray-Ban</a></li>
+										<li><a href="products.html">Wood Wood</a></li>
+									</ul>	
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="grid"><a href="#">Sports</a>
+						<div class="mepanel">
+							<div class="row">
+								<div class="col1 me-one">
+									<h4>Shop</h4>
+									<ul>
+										<li><a href="products.html">New Arrivals</a></li>
+										<li><a href="products.html">Men</a></li>
+										<li><a href="products.html">Women</a></li>
+										<li><a href="products.html">Accessories</a></li>
+										<li><a href="products.html">Kids</a></li>
+										<li><a href="products.html">login</a></li>
+										<li><a href="products.html">Brands</a></li>
+										<li><a href="products.html">My Shopping Bag</a></li>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>Style Zone</h4>
+									<ul>
+										<li><a href="products.html">Men</a></li>
+										<li><a href="products.html">Women</a></li>
+										<li><a href="products.html">Brands</a></li>
+										<li><a href="products.html">Kids</a></li>
+										<li><a href="products.html">Accessories</a></li>
+										<li><a href="products.html">Style Videos</a></li>
+									</ul>	
+								</div>
+								<div class="col1 me-one">
+									<h4>Popular Brands</h4>
+									<ul>
+										<li><a href="products.html">Levis</a></li>
+										<li><a href="products.html">Persol</a></li>
+										<li><a href="products.html">Nike</a></li>
+										<li><a href="products.html">Edwin</a></li>
+										<li><a href="products.html">New Balance</a></li>
+										<li><a href="products.html">Jack & Jones</a></li>
+										<li><a href="products.html">Paul Smith</a></li>
+										<li><a href="products.html">Ray-Ban</a></li>
+										<li><a href="products.html">Wood Wood</a></li>
+									</ul>	
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="grid"><a href="#">Brands</a>
+						<div class="mepanel">
+							<div class="row">
+								<div class="col1 me-one">
+									<h4>Shop</h4>
+									<ul>
+										<li><a href="products.html">New Arrivals</a></li>
+										<li><a href="products.html">Men</a></li>
+										<li><a href="products.html">Women</a></li>
+										<li><a href="products.html">Accessories</a></li>
+										<li><a href="products.html">Kids</a></li>
+										<li><a href="products.html">login</a></li>
+										<li><a href="products.html">Brands</a></li>
+										<li><a href="products.html">My Shopping Bag</a></li>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>Style Zone</h4>
+									<ul>
+										<li><a href="products.html">Men</a></li>
+										<li><a href="products.html">Women</a></li>
+										<li><a href="products.html">Brands</a></li>
+										<li><a href="products.html">Kids</a></li>
+										<li><a href="products.html">Accessories</a></li>
+										<li><a href="products.html">Style Videos</a></li>
+									</ul>	
+								</div>
+								<div class="col1 me-one">
+									<h4>Popular Brands</h4>
+									<ul>
+										<li><a href="products.html">Levis</a></li>
+										<li><a href="products.html">Persol</a></li>
+										<li><a href="products.html">Nike</a></li>
+										<li><a href="products.html">Edwin</a></li>
+										<li><a href="products.html">New Balance</a></li>
+										<li><a href="products.html">Jack & Jones</a></li>
+										<li><a href="products.html">Paul Smith</a></li>
+										<li><a href="products.html">Ray-Ban</a></li>
+										<li><a href="products.html">Wood Wood</a></li>
+									</ul>	
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	</body>
