@@ -34,4 +34,9 @@ private BrandDao brandDao;
 		brandDao.delete(id);
 	}
 
+	public Brand findByName(String name) {
+		// TODO Auto-generated method stub
+		return brandDao.findByName(name);
+	}
+
 }

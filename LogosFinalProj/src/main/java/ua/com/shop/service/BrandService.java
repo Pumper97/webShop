@@ -14,4 +14,6 @@ public interface BrandService {
 	Brand findOne(int id);
 
 	void delete(int id);
+
+	Brand findByName(String name);
 }

@@ -15,6 +15,8 @@ public class Brand {
 	private int id;
 	private String name;
 	@OneToMany
+	List<Model> modList;
+	@OneToMany
 	private List<Sneaker> sneakerList;
 
 	public Brand() {

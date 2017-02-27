@@ -1,79 +1,67 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <div class="row">
 	<div class="col-md-3 col-xs-12"></div>
 	<div class="col-md-7 col-xs-12">
 		<div class="row">
 			<div class="col-md-12 col-xs-12">
-				<form class="form-horizontal" action="/admin/sneaker" method="POST">
-
+				<form:form class="form-horizontal" action="/admin/sneaker" method="POST" modelAttribute="sneaker">
 					<div class="form-group">
-						<label for="nossId" class="col-sm-2 control-label">Brand</label>
+						<label class="col-sm-10 col-sm-offset-2 control-label" for="name" style="color:red;text-align:left;"><form:errors path="name"/></label>
+					</div>
+					<div class="form-group">
+						<label for="brand" class="col-sm-2 control-label">Brand</label>
 						<div class="col-sm-10">
-							<select class="form-control" name="brandId" id="brandId">
-								<c:forEach items="${brands}" var="brand">
-									<option value="${brand.id}">${brand.name}</option>
-								</c:forEach>
-							</select>
+						<form:select class="form-control" path="brand" id="brand" items="${brands}" itemValue="id" itemLabel="name"/>
+							
 						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-10 col-sm-offset-2 control-label" for="name" style="color:red;text-align:left;"><form:errors path="name"/></label>
 					</div>
 					<div class="form-group">
 						<label for="nossId" class="col-sm-2 control-label">Model</label>
 						<div class="col-sm-10">
-							<select class="form-control" name="modelId" id="modelId">
-								<c:forEach items="${models}" var="model">
-									<option value="${model.id}">${model.name}</option>
-								</c:forEach>
-							</select>
+						<form:select class="form-control" path="model" id="model" items="${models}" itemValue="id" itemLabel="name"/>
 						</div>
 					</div>
-
-
+					<div class="form-group">
+						<label class="col-sm-10 col-sm-offset-2 control-label" for="name" style="color:red;text-align:left;"><form:errors path="name"/></label>
+					</div>
 					<div class="form-group">
 						<label for="nossId" class="col-sm-2 control-label">Color</label>
 						<div class="col-sm-10">
-							<select class="form-control" name="colorId" id="colorId">
-								<c:forEach items="${colors}" var="color">
-									<option value="${color.id}">${color.name}</option>
-								</c:forEach>
-							</select>
+						<form:select class="form-control" path="color" id="color" items="${colors}" itemValue="id" itemLabel="name"/>
 						</div>
 					</div>
-
-
-
-
-
-
-
 					<div class="form-group">
+					
 						<label for="nossId" class="col-sm-2 control-label">Season</label>
 						<div class="col-sm-10">
-							<select class="form-control" name="seasonId" id="seasonId">
-								<c:forEach items="${seasons}" var="season">
-									<option value="${season.id}">${season.name}</option>
-								</c:forEach>
-							</select>
+						<form:select class="form-control" path="season" id="season" items="${seasons}" itemValue="id" itemLabel="name"/>
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="nossId" class="col-sm-2 control-label">Gender</label>
 						<div class="col-sm-10">
-							<select class="form-control" name="genderId" id="genderId">
-								<c:forEach items="${genders}" var="gender">
-									<option value="${gender.id}">${gender.name}</option>
-								</c:forEach>
-							</select>
+						<form:select class="form-control" path="gender" id="gender" items="${genders}" itemValue="id" itemLabel="name"/>
 						</div>
 					</div>
-			</div>
+					<div class="form-group">
+						<label for="nossId" class="col-sm-2 control-label">Size</label>
+						<div class="col-sm-10">
+						<form:select class="form-control" path="size" id="size" items="${sizes}" itemValue="id" itemLabel="size"/>
+						</div>
+					</div>
+					
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
 					<button type="submit" class="btn btn-default">Create</button>
 				</div>
 			</div>
-			</form>
+			</form:form>
 		</div>
 	</div>
 	<div class="row">
@@ -89,12 +77,17 @@
 	</div>
 	<c:forEach items="${sneakers}" var="sneaker">
 		<div class="row">
-			<div class="col-md-4 col-xs-4">${sneaker}</div>
-			<div class="col-md-4 col-xs-4">
+			<div class="col-md-1 col-xs-1">${sneaker.brand.name}</div>
+			<div class="col-md-1 col-xs-1">${sneaker.model.name}</div>
+			<div class="col-md-1 col-xs-1">${sneaker.color.name}</div>
+			<div class="col-md-1 col-xs-1">${sneaker.season.name}</div>
+			<div class="col-md-1 col-xs-1">${sneaker.gender.name}</div>
+			<div class="col-md-1 col-xs-1">${sneaker.size.size}</div>
+			<div class="col-md-3 col-xs-3">
 				<a class="btn btn-warning"
 					href="/admin/sneaker/update/${sneaker.id}">update</a>
 			</div>
-			<div class="col-md-4 col-xs-4">
+			<div class="col-md-3 col-xs-3">
 				<a class="btn btn-danger" href="/admin/sneaker/delete/${sneaker.id}">delete</a>
 			</div>
 		</div>

@@ -15,4 +15,6 @@ public interface ModelService {
 	Model findOne(int id);
 
 	void delete(int id);
+
+	Model findByName(String name);
 }

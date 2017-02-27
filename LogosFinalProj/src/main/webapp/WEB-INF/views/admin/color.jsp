@@ -31,6 +31,9 @@
 			<div class="form-group">
 						
 				<form:form class="form-horizontal" action="/admin/color" method="POST" modelAttribute="color">
+				<div class="form-group">
+						<label class="col-sm-10 col-sm-offset-2 control-label" for="name" style="color:red;text-align:left;"><form:errors path="name"/></label>
+					</div>
 					<div class="form-group">
     					<label for="name" class="col-sm-2 control-label">Name</label>
     					<div class="col-sm-10">

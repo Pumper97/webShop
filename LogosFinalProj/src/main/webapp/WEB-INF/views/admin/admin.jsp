@@ -11,9 +11,9 @@
 			</button>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
+					<li><a href="/admin/sneaker">Sneaker</a></li>
 					<li><a href="/admin/brand">Brand</a></li>
 					<li><a href="/admin/size">Size</a></li>
-					<li><a href="/admin/sneaker">Sneaker</a></li>
 					<li><a href="/admin/model">Model</a></li>
 					<li><a href="/admin/color">Color</a></li>
 					

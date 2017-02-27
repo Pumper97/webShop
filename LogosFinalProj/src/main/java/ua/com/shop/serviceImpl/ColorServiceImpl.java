@@ -32,4 +32,9 @@ private ColorDao colorDao;
 		colorDao.delete(id);
 	}
 
+	public Color findByName(String name) {
+		// TODO Auto-generated method stub
+		return colorDao.findByName(name);
+	}
+
 }

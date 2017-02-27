@@ -6,9 +6,16 @@
 		<h2>Header</h2>
     </div>
     <ul class="nav navbar-nav">
-<!--       	<li><a>Home</a></li> -->
-<!--       	<li><a>Page 1</a></li> -->
-<!--       	<li><a>Page 2</a></li> -->
+<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li><a href="/admin/sneaker">Sneaker</a></li>
+					<li><a href="/admin/brand">Brand</a></li>
+					<li><a href="/admin/size">Size</a></li>
+					<li><a href="/admin/model">Model</a></li>
+					<li><a href="/admin/color">Color</a></li>
+					
+				</ul>
+			</div>
     </ul>
     <ul class="nav navbar-nav navbar-right">
     </ul>

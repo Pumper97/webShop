@@ -34,4 +34,9 @@ public void delete(int id) {
 	modelDao.delete(id);
 }
 
+public Model findByName(String name) {
+	// TODO Auto-generated method stub
+	return modelDao.findByName(name);
+}
+
 }

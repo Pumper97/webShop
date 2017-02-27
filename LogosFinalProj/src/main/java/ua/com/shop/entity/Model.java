@@ -13,6 +13,8 @@ public class Model {
 	private int id;
 	private String name;
 	@ManyToOne
+	private Brand brand;
+	@ManyToOne
 	private Sneaker sneaker;
 	
 

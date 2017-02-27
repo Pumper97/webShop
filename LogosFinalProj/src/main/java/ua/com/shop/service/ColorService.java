@@ -15,4 +15,6 @@ public interface ColorService {
 	Color findOne(int id);
 
 	void delete(int id);
+
+	Color findByName(String name);
 }
