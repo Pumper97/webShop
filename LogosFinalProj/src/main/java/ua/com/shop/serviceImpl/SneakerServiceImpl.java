@@ -32,9 +32,5 @@ public class SneakerServiceImpl implements SneakerService {
 
 	}
 
-	public Sneaker findByName(String name) {
-		// TODO Auto-generated method stub
-		return sneakerDao.findByName(name);
-	}
-
+	
 }

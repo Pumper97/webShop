@@ -15,5 +15,5 @@ public interface SneakerService {
 
 	void delete(int id);
 
-	Sneaker findByName(String name);
+
 }

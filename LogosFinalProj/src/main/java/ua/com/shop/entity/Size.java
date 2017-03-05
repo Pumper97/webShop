@@ -1,5 +1,6 @@
 package ua.com.shop.entity;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -13,7 +14,7 @@ public class Size {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private double size;
+	private BigDecimal size;
 	@OneToMany
 	private List<Sneaker> listSneaker;
 
@@ -21,7 +22,7 @@ public class Size {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Size(double size, List<Sneaker> listSneaker) {
+	public Size(BigDecimal size, List<Sneaker> listSneaker) {
 		super();
 		this.size = size;
 		this.listSneaker = listSneaker;
@@ -35,11 +36,11 @@ public class Size {
 		this.id = id;
 	}
 
-	public double getSize() {
+	public BigDecimal getSize() {
 		return size;
 	}
 
-	public void setSize(double size) {
+	public void setSize(BigDecimal size) {
 		this.size = size;
 	}
 
@@ -51,6 +52,7 @@ public class Size {
 		this.listSneaker = listSneaker;
 	}
 
+	
 	
 
 }

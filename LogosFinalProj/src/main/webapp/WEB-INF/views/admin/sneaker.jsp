@@ -8,9 +8,7 @@
 		<div class="row">
 			<div class="col-md-12 col-xs-12">
 				<form:form class="form-horizontal" action="/admin/sneaker" method="POST" modelAttribute="sneaker">
-					<div class="form-group">
-						<label class="col-sm-10 col-sm-offset-2 control-label" for="name" style="color:red;text-align:left;"><form:errors path="name"/></label>
-					</div>
+					
 					<div class="form-group">
 						<label for="brand" class="col-sm-2 control-label">Brand</label>
 						<div class="col-sm-10">
@@ -18,18 +16,14 @@
 							
 						</div>
 					</div>
-					<div class="form-group">
-						<label class="col-sm-10 col-sm-offset-2 control-label" for="name" style="color:red;text-align:left;"><form:errors path="name"/></label>
-					</div>
+					
 					<div class="form-group">
 						<label for="nossId" class="col-sm-2 control-label">Model</label>
 						<div class="col-sm-10">
 						<form:select class="form-control" path="model" id="model" items="${models}" itemValue="id" itemLabel="name"/>
 						</div>
 					</div>
-					<div class="form-group">
-						<label class="col-sm-10 col-sm-offset-2 control-label" for="name" style="color:red;text-align:left;"><form:errors path="name"/></label>
-					</div>
+					
 					<div class="form-group">
 						<label for="nossId" class="col-sm-2 control-label">Color</label>
 						<div class="col-sm-10">

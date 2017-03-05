@@ -9,5 +9,5 @@ import ua.com.shop.entity.Brand;
 import ua.com.shop.entity.Sneaker;
 
 public interface SneakerDao extends JpaRepository<Sneaker, Integer> {
-	Sneaker findByName(String name);
+	
 }
