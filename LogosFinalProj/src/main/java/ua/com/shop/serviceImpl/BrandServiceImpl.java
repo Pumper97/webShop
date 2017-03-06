@@ -3,20 +3,24 @@ package ua.com.shop.serviceImpl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import ua.com.shop.dao.BrandDao;
 import ua.com.shop.entity.Brand;
 import ua.com.shop.service.BrandService;
+import ua.dto.filter.BrandFilter;
+
 @Service
 public class BrandServiceImpl implements BrandService {
-@Autowired
-private BrandDao brandDao;
-
+	@Autowired
+	private BrandDao brandDao;
 
 	public void save(Brand brand) {
 		brandDao.save(brand);
-		
+
 	}
 
 	public List<Brand> findAll() {
@@ -39,4 +43,19 @@ private BrandDao brandDao;
 		return brandDao.findByName(name);
 	}
 
+	@Override
+	public Page<Brand> findAll(BrandFilter brandFilter, Pageable pageable) {
+
+		return brandDao.findAll(findByNameLike(brandFilter), pageable);
+	}
+
+	private Specification<Brand> findByNameLike(BrandFilter brandFilter) {
+		return (root, query, cb) -> {
+			if (brandFilter.getSearch().isEmpty())
+				return null;
+			return cb.like(cb.lower(root.get("name")), brandFilter.getSearch()
+					.toLowerCase() + "%");
+
+		};
+	}
 }
