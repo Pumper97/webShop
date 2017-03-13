@@ -6,8 +6,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import ua.com.shop.dto.filter.BrandFilter;
 import ua.com.shop.entity.Brand;
-import ua.dto.filter.BrandFilter;
 @Service
 public interface BrandService {
 	void save(Brand brand);

@@ -3,7 +3,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 
-import ua.dto.filter.BrandFilter;
+import ua.com.shop.dto.filter.BrandFilter;
 
 
 

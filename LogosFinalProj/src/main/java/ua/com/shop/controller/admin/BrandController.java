@@ -18,10 +18,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
+import ua.com.shop.dto.filter.BrandFilter;
 import ua.com.shop.entity.Brand;
 import ua.com.shop.service.BrandService;
 import ua.com.shop.validator.BrandValidator;
-import ua.dto.filter.BrandFilter;
 import static ua.com.shop.util.ParamBuilder.*;
 @Controller
 @RequestMapping("/admin/brand")

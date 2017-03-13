@@ -9,9 +9,9 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import ua.com.shop.dao.BrandDao;
+import ua.com.shop.dto.filter.BrandFilter;
 import ua.com.shop.entity.Brand;
 import ua.com.shop.service.BrandService;
-import ua.dto.filter.BrandFilter;
 
 @Service
 public class BrandServiceImpl implements BrandService {

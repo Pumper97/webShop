@@ -3,11 +3,15 @@ package ua.com.shop.serviceImpl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import ua.com.shop.dao.SneakerDao;
+import ua.com.shop.dto.filter.SneakerFilter;
 import ua.com.shop.entity.Sneaker;
 import ua.com.shop.service.SneakerService;
+import ua.com.shop.specification.SneakerSpecification;
 @Service
 public class SneakerServiceImpl implements SneakerService {
 	@Autowired
@@ -30,6 +34,12 @@ public class SneakerServiceImpl implements SneakerService {
 	public void delete(int id) {
 		sneakerDao.delete(id);
 
+	}
+
+	@Override
+	public Page<Sneaker> findAll(Pageable pageable, SneakerFilter filter) {
+		// TODO Auto-generated method stub
+		return sneakerDao.findAll(new SneakerSpecification(filter), pageable);
 	}
 
 	

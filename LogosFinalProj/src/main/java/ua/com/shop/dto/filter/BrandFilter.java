@@ -1,4 +1,4 @@
-package ua.dto.filter;
+package ua.com.shop.dto.filter;
 
 public class BrandFilter {
 	private String search = "";

@@ -1,5 +1,6 @@
 package ua.com.shop.entity;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -32,14 +33,14 @@ public class Sneaker {
 	@ManyToOne
 	private Color color;
 	private String description;
-	private double price;
+	private BigDecimal price;
 
 	public Sneaker() {
 		// TODO Auto-generated constructor stub
 	}
 
 	public Sneaker(Brand brand, Size size, Model model, Season season,
-			Gender gender, Color color, String description, double price) {
+			Gender gender, Color color, String description, BigDecimal price) {
 		super();
 		this.brand = brand;
 		this.size = size;
@@ -115,13 +116,12 @@ public class Sneaker {
 		this.description = description;
 	}
 
-	public double getPrice() {
+	public BigDecimal getPrice() {
 		return price;
 	}
 
-	public void setPrice(double price) {
+	public void setPrice(BigDecimal price) {
 		this.price = price;
 	}
 
-	
 }
