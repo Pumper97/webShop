@@ -15,12 +15,12 @@ public class IndexController {
 	@Autowired
 	private BrandService brandService;
 
-	@RequestMapping("/")
-	public String index(Model model) {
-		
-
-		return "user-index";
-}
+//	@RequestMapping("/")
+//	public String index(Model model) {
+//		
+//
+//		return "user-index";
+//}
 //	@RequestMapping("/admin/brand")
 //	public String adminBrand() {
 //		return "admin-brand";

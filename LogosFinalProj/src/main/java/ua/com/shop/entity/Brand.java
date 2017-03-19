@@ -7,6 +7,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Transient;
+
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 public class Brand {
@@ -18,6 +21,33 @@ public class Brand {
 	List<Model> modList;
 	@OneToMany
 	private List<Sneaker> sneakerList;
+	@Transient
+	private MultipartFile file;
+	private int version;
+
+	public List<Model> getModList() {
+		return modList;
+	}
+
+	public void setModList(List<Model> modList) {
+		this.modList = modList;
+	}
+
+	public MultipartFile getFile() {
+		return file;
+	}
+
+	public void setFile(MultipartFile file) {
+		this.file = file;
+	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
 
 	public Brand() {
 		super();

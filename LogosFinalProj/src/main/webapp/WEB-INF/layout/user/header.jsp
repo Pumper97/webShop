@@ -1,14 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="/WEB-INF/custom.tld" prefix="custom"%>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
 <body>
 <div class="top-header">
 	<div class="container">
 		<div class="top-header-main">
 			<div class="col-md-4 top-header-left">
 				<div class="search-bar">
-					<input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
-					<input type="submit" value="">
+				<sec:authorize access="isAuthenticated()">
+					<c:forEach items="${userLogIn}" var = "principal" >
+					 <div class="col-md-2 col-xs-2">${principal}</div>
+					</c:forEach>
+					</sec:authorize>
+					
 				</div>
 			</div>
 			<div class="col-md-4 top-header-middle">

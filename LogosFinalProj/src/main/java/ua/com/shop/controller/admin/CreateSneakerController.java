@@ -97,7 +97,7 @@ public class CreateSneakerController {
 			@PageableDefault Pageable pageable,
 			@ModelAttribute("filter") SneakerFilter filter) {
 		sneakerService.delete(id);
-		return "redirect:/admin/sneaker"+getParams(pageable, filter);
+		return "redirect:/admin/sneaker" + getParams(pageable, filter);
 	}
 
 	@GetMapping("/update/{id}")
@@ -105,7 +105,7 @@ public class CreateSneakerController {
 			@PageableDefault Pageable pageable,
 			@ModelAttribute("filter") SneakerFilter filter) {
 		model.addAttribute("sneaker", sneakerService.findOne(id));
-		return show(model,pageable,filter);
+		return show(model, pageable, filter);
 	}
 
 	@PostMapping
@@ -115,27 +115,28 @@ public class CreateSneakerController {
 		sneakerService.save(sneaker);
 		status.setComplete();
 
-		return "redirect:/admin/sneaker"+getParams(pageable, filter);
+		return "redirect:/admin/sneaker" + getParams(pageable, filter);
 	}
-	private String getParams(Pageable pageable, SneakerFilter filter){
+
+	private String getParams(Pageable pageable, SneakerFilter filter) {
 		String page = ParamBuilder.getParams(pageable);
 		StringBuilder buffer = new StringBuilder(page);
-		if(!filter.getMax().isEmpty()){
+		if (!filter.getMax().isEmpty()) {
 			buffer.append("&max=");
 			buffer.append(filter.getMax());
 		}
-		if(!filter.getMin().isEmpty()){
+		if (!filter.getMin().isEmpty()) {
 			buffer.append("&min=");
 			buffer.append(filter.getMin());
 		}
-		if(!filter.getColorId().isEmpty()){
+		if (!filter.getColorId().isEmpty()) {
 			for (int id : filter.getColorId()) {
 				buffer.append("&colorId=");
 				buffer.append(id);
 			}
 		}
-	
-		if(!filter.getBrandId().isEmpty()){
+
+		if (!filter.getBrandId().isEmpty()) {
 			for (int id : filter.getBrandId()) {
 				buffer.append("&brandId=");
 				buffer.append(id);
@@ -144,4 +145,3 @@ public class CreateSneakerController {
 		return buffer.toString();
 	}
 }
-

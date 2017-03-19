@@ -48,9 +48,21 @@
 				</div>
 			</div>
 			<div class="form-group">
+				<label class="control-label col-sm-12">Models</label>
+				<div class="col-sm-12">
+					<form:checkboxes element="div" items="${models}" itemValue="id" itemLabel="name" path="modelId"/>
+				</div>
+			</div>
+			<div class="form-group">
 				<label class="control-label col-sm-12">Sizes</label>
 				<div class="col-sm-12">
 					<form:checkboxes element="div" items="${sizes}" itemValue="id" itemLabel="size" path="sizeId"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-12">Colors</label>
+				<div class="col-sm-12">
+					<form:checkboxes element="div" items="${colors}" itemValue="id" itemLabel="name" path="colorId"/>
 				</div>
 			</div>
 			<button type="submit" class="btn btn-primary">Ok</button>
@@ -80,15 +92,33 @@
 						<label style="color:red;text-align:left;" for="name" class="col-sm-10 col-sm-offset-2 control-label"><form:errors path="color"/></label>
 					</div>
 					<div class="form-group">
-    					<label for="name" class="col-sm-2 control-label">Color</label>
+    					<label for="model" class="col-sm-2 control-label">Color</label>
     					<div class="col-sm-10">
-      						<form:input type="text" class="form-control" path="color" id="name"/>
+      						<form:select class="form-control" path="color" id="color" items="${colors}" itemValue="id" itemLabel="name"/>
     					</div>
   					</div>
   					<div class="form-group">
     					<label for="ms" class="col-sm-2 control-label">Size</label>
     					<div class="col-sm-10">
-      						<form:select class="form-control" path="size" id="sizeId" items="${sizes}" itemLabel="size" itemValue="id"/>
+      						<form:select class="form-control" path="size" id="size" items="${sizes}" itemLabel="size" itemValue="id"/>
+    					</div>
+  					</div>
+  					<div class="form-group">
+    					<label for="brand" class="col-sm-2 control-label">Gender</label>
+    					<div class="col-sm-10">
+      						<form:select class="form-control" path="gender" id="gender" items="${genders}" itemValue="id" itemLabel="name"/>
+    					</div>
+  					</div>
+  					<div class="form-group">
+    					<label for="brand" class="col-sm-2 control-label">Season</label>
+    					<div class="col-sm-10">
+      						<form:select class="form-control" path="season" id="season" items="${seasons}" itemValue="id" itemLabel="name"/>
+    					</div>
+  					</div>
+  					<div class="form-group">
+    					<label for="price" class="col-sm-2 control-label">Price</label>
+    					<div class="col-sm-10">
+      						<form:input class="form-control" path="price" id="price"/>
     					</div>
   					</div>
   					<div class="form-group">
@@ -100,18 +130,26 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-3 col-xs-3"><h3>Amount</h3></div>
-			<div class="col-md-3 col-xs-3"><h3>Measuring System</h3></div>
-			<div class="col-md-3 col-xs-3"><h3>Ingredient</h3></div>
-			<div class="col-md-3 col-xs-3"><h3>Options</h3></div>
+			<div class="col-md-2 col-xs-2"><h3>Brand</h3></div>
+			<div class="col-md-2 col-xs-2"><h3>Model</h3></div>
+			<div class="col-md-1 col-xs-1"><h3>Color</h3></div>
+			<div class="col-md-1 col-xs-1"><h3>Size</h3></div>
+			<div class="col-md-2 col-xs-2"><h3>Gender</h3></div>
+			<div class="col-md-1 col-xs-1"><h3>Season</h3></div>
+			<div class="col-md-1 col-xs-1"><h3>Price</h3></div>
+			<div class="col-md-2 col-xs-2"><h3>Options</h3></div>
 		</div>
 			<c:forEach items="${page.content}" var="sneaker">
 				<div class="row">
-					<div class="col-md-3 col-xs-3">${sneaker.brand.name}</div>
-					<div class="col-md-3 col-xs-3">${sneaker.model}</div>
-					<div class="col-md-3 col-xs-3">${sneaker.color.name}</div>
+					<div class="col-md-2 col-xs-2">${sneaker.brand.name}</div>
+					<div class="col-md-2 col-xs-2">${sneaker.model.name}</div>
+					<div class="col-md-1 col-xs-1">${sneaker.color.name}</div>
+					<div class="col-md-1 col-xs-1">${sneaker.size.size}</div>
+					<div class="col-md-2 col-xs-2">${sneaker.gender.name}</div>
+					<div class="col-md-1 col-xs-1">${sneaker.season.name}</div>
+					<div class="col-md-1 col-xs-1">${sneaker.price}</div>
 					
-					<div class="col-md-3 col-xs-3"><a class="btn btn-warning" href="/admin/sneaker/update/${sneaker.id}<custom:allParams/>">update</a>
+					<div class="col-md-2 col-xs-2"><a class="btn btn-warning" href="/admin/sneaker/update/${sneaker.id}<custom:allParams/>">update</a>
 					<a class="btn btn-danger" href="/admin/sneaker/delete/${sneaker.id}<custom:allParams/>">delete</a></div>
 				</div>
 			</c:forEach>

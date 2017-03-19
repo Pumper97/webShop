@@ -14,11 +14,8 @@
 			</button>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="/admin/ingredient<custom:allParams/>">Ingredient</a></li>
-					<li><a href="/admin/ms">Measuring system</a></li>
-					<li><a href="/admin/country">Country</a></li>
-					<li><a href="/admin/amount">Amount</a></li>
-					<li><a href="/admin/recipe">Recipe</a></li>
+					<li class="active"><a href="/admin/brand<custom:allParams/>">Brands</a></li>
+					
 				</ul>
 			</div>
 		</div>
@@ -37,8 +34,8 @@
 	<div class="col-md-7 col-xs-12">
 		<div class="row">
 			<div class="col-md-12 col-xs-12">
-				<form:form class="form-horizontal" action="/admin/brand" method="POST" modelAttribute="brand">
-					<custom:hiddenInputs excludeParams="name"/>
+				<form:form class="form-horizontal" action="/admin/brand" method="POST" modelAttribute="brand" enctype="multipart/form-data">
+					<custom:hiddenInputs excludeParams="name, file"/>
 					<div class="form-group">
 						<label style="color:red;text-align:left;" for="name" class="col-sm-10 col-sm-offset-2 control-label"><form:errors path="name"/></label>
 					</div>
@@ -46,6 +43,12 @@
     					<label for="name" class="col-sm-2 control-label">Name</label>
     					<div class="col-sm-10">
       						<form:input class="form-control" path="name" id="name"/>
+    					</div>
+  					</div>
+  					<div class="form-group">
+    					<label for="name" class="col-sm-2 control-label">Name</label>
+    					<div class="col-sm-10">
+      						<input name="file" type="file" id="name">
     					</div>
   					</div>
   					<div class="form-group">
@@ -62,11 +65,10 @@
 			<div class="col-md-4 col-xs-4"><h3>Delete</h3></div>
 		</div>
 			<c:forEach items="${page.content}" var="brand">
-				<div class="row">
-					<div class="col-md-4 col-xs-4">${brand.name}</div>
-					<div class="col-md-4 col-xs-4"><a class="btn btn-warning" href="/admin/brand/update/${brand.id}<custom:allParams/>">update</a></div>
-					<div class="col-md-4 col-xs-4"><a class="btn btn-danger" href="/admin/brand/delete/${brand.id}<custom:allParams/>">delete</a></div>
-				</div>
+				<div class="col-md-3 col-xs-3"><img src="/images/brand/${brand.id}.jpg?version=${brand.version}"></div>
+					<div class="col-md-3 col-xs-3">${brand.name}</div>
+					<div class="col-md-3 col-xs-3"><a class="btn btn-warning" href="/admin/brand/update/${brand.id}<custom:allParams/>">update</a></div>
+					<div class="col-md-3 col-xs-3"><a class="btn btn-danger" href="/admin/brand/delete/${brand.id}<custom:allParams/>">delete</a></div>
 			</c:forEach>
 	</div>
 	<div class="col-md-2 col-xs-12">

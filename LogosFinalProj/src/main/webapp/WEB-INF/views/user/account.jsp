@@ -1,64 +1,32 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-<div class="account">
-		<div class="container"> 
-			<div class="account-bottom">
-				<div class="col-md-6 account-left">
-					<form method="POST" >
-					<div class="account-top heading">
-						<h3>NEW CUSTOMERS</h3>
-					</div>
-					<div class="address">
-						<span>First Name</span>
-						<input type="text" name="fName">
-					</div>
-					<div class="address">
-						<span>Last Name</span>
-						<input type="text" name="lName">
-					</div>
-					<div class="address">
-						<span>Email Address</span>
-						<input type="text" name="email">
-					</div>
-					<div class="address">
-						<span>Password</span>
-						<input type="text" name="password">
-					</div>
-					
-					<div class="address new">
-						<input type="submit" value="submit">
-					</div>
-					</form>
-				</div>
-				<div class="col-md-6 account-left">
-					<form>
-					<div class="account-top heading">
-						<h3>REGISTERED CUSTOMERS</h3>
-					</div>
-					<div class="address">
-						<span>Email Address</span>
-						<input type="text">
-					</div>
-					<div class="address">
-						<span>Password</span>
-						<input type="text">
-					</div>
-					<div class="address">
-						<a class="forgot" href="#">Forgot Your Password?</a>
-						<input type="submit" value="Login">
-					</div>
-				</div>
-				</form>
-				<div class="clearfix"> </div>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<div class="row">
+	<div class="col-sm-12 col-xs-12">
+		<form:form class="form-horizontal" action="/registration" method="POST" modelAttribute="user">
+  			<div class="form-group">
+				<label for="email" class="col-sm-offset-2 col-sm-10"><form:errors path="email"/></label>
 			</div>
-		</div>
+			<div class="form-group">
+    			<label for="email" class="col-sm-2 control-label">Email</label>
+    			<div class="col-sm-10">
+      				<form:input class="form-control" path="email" id="email"/>
+    			</div>
+  			</div>
+  			<div class="form-group">
+				<label for="email" class="col-sm-offset-2 col-sm-10"><form:errors path="password"/></label>
+			</div>
+			<div class="form-group">
+    			<label for="password" class="col-sm-2 control-label">Password</label>
+    			<div class="col-sm-10">
+      				<form:password class="form-control" path="password" id="password"/>
+    			</div>
+  			</div>
+  			<div class="form-group">
+    			<div class="col-sm-offset-2 col-sm-10">
+      				<button type="submit" class="btn btn-default">Register</button>
+    			</div>
+  			</div>
+		</form:form>
 	</div>
-</body>
-</html>
+</div>

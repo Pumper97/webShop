@@ -7,7 +7,7 @@
 					<h3>ABOUT US</h3>
 					<ul>
 						<li><a href="#">Who We Are</a></li>
-						<li><a href="/user/contacts">Contact Us</a></li>
+						<li><a href="/user/registration">Contact Us</a></li>
 						<li><a href="#">Our Sites</a></li>
 						<li><a href="#">In The News</a></li>
 						<li><a href="#">Team</a></li>
