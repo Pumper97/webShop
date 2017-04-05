@@ -6,6 +6,8 @@ import java.util.Collection;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -33,6 +35,9 @@ public class Users implements UserDetails {
 	private String password;
 	@ManyToOne
 	private Gender gender;
+	@ManyToOne(fetch=FetchType.LAZY)
+	private ShopingCart shopingCart;
+	@Enumerated
 	private Role role;
 	@ManyToMany
 	@JoinTable(name = "user_in_city", joinColumns = @JoinColumn(name = "id_user"), inverseJoinColumns = @JoinColumn(name = "id_city"))
@@ -141,5 +146,14 @@ public class Users implements UserDetails {
 		// TODO Auto-generated method stub
 		return true;
 	}
+
+	public ShopingCart getShopingCart() {
+		return shopingCart;
+	}
+
+	public void setShopingCart(ShopingCart shopingCart) {
+		this.shopingCart = shopingCart;
+	}
+	
 
 }

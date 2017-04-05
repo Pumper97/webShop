@@ -14,7 +14,7 @@
 			</button>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="/admin/ingredient<custom:allParams/>">Ingredient</a></li>
+					<li class="active"><a href="/admin/ingredient<custom:allParams/>">Color</a></li>
 					
 				</ul>
 			</div>

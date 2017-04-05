@@ -19,11 +19,9 @@
 			</button>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
-					<li><a href="/admin/brand">Brand</a></li>
-					<li><a href="/admin/color">Color</a></li>
-					<li><a href="/admin/model">model</a></li>
+				
 					<li class="active"><a href="/admin/sneaker<custom:allParams/>">Sneaker</a></li>
-					<li><a href="/admin/size">size</a></li>
+					
 				</ul>
 			</div>
 		</div>

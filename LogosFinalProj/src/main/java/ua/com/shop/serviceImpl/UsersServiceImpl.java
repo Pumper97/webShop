@@ -11,9 +11,14 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import ua.com.shop.dao.ShopingCartDao;
+import ua.com.shop.dao.SneakerDao;
 import ua.com.shop.dao.UsersDao;
 import ua.com.shop.entity.Role;
+import ua.com.shop.entity.ShopingCart;
+import ua.com.shop.entity.Sneaker;
 import ua.com.shop.entity.Users;
 import ua.com.shop.service.UsersService;
 
@@ -23,6 +28,11 @@ public class UsersServiceImpl implements UsersService, UserDetailsService {
 	private UsersDao usersDao;
 	@Autowired
 	private BCryptPasswordEncoder encoder;
+	@Autowired
+	private ShopingCartDao shopingCartDao;
+
+	@Autowired
+	private SneakerDao sneakerDao;
 
 	public void save(Users users) {
 		users.setPassword(encoder.encode(users.getPassword()));
@@ -69,5 +79,24 @@ public class UsersServiceImpl implements UsersService, UserDetailsService {
 	public Users findByEmail(String string) {
 		// TODO Auto-generated method stub
 		return usersDao.findByEmail(string);
+	}
+
+	@Override
+	public int createNewUser() {
+		return usersDao.saveAndFlush(new Users()).getId();
+	}
+
+	@Override
+	@Transactional
+	public void addToShoppingCart(int userId, int itemId) {
+		Users user = usersDao.findOne(userId);
+		ShopingCart cart = user.getShopingCart();
+		if(cart==null){
+			cart = shopingCartDao.save(new ShopingCart());
+			user.setShopingCart(cart);
+		}
+		Sneaker sneaker = sneakerDao.findOne(itemId);
+		cart.add(sneaker);
+		
 	}
 }

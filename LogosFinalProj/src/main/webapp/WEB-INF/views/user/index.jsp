@@ -7,7 +7,7 @@
 	prefix="form"%>
 <h2>Hello</h2>
 <sec:authorize access="isAuthenticated()">
-
+<a href="user/cart">Cart</a>
 	<c:forEach items="${user}" var="users">
 		<div class="col-md-4 col-xs-4">${users.email}</div>
 	</c:forEach>
@@ -20,6 +20,7 @@
 </sec:authorize>
 <sec:authorize access="!isAuthenticated()">
 	<a href="/login">Login</a>
+	<a href="user/cart">Cart</a>
 	<a href="/registration">Registration</a>
 </sec:authorize>
 <a href="/user/sneakerInShop">shop</a>

@@ -18,7 +18,9 @@ public class SneakerServiceImpl implements SneakerService {
 	private SneakerDao sneakerDao;
 
 	public void save(Sneaker sneaker) {
+		
 		sneakerDao.save(sneaker);
+	
 	}
 
 	public List<Sneaker> findAll() {
@@ -40,6 +42,20 @@ public class SneakerServiceImpl implements SneakerService {
 	public Page<Sneaker> findAll(Pageable pageable, SneakerFilter filter) {
 		// TODO Auto-generated method stub
 		return sneakerDao.findAll(new SneakerSpecification(filter), pageable);
+	}
+
+	@Override
+	public int findCount(int id) {
+		Integer count = sneakerDao.findCount(id);
+		if(count==null)return 0;
+		return count;
+		
+	}
+
+	@Override
+	public List<Sneaker> findByUserId(int userId) {
+		
+		return sneakerDao.findByUserId(userId);
 	}
 
 	

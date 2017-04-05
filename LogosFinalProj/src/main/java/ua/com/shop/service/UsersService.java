@@ -17,4 +17,7 @@ public interface UsersService {
 
 	void delete(int id);
 	Users findByEmail(String string);
+	int createNewUser();
+
+	void addToShoppingCart(int userId, int itemId);
 }

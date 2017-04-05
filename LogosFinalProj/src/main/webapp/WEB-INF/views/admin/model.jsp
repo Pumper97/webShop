@@ -13,10 +13,7 @@
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="/admin/model">Model</a></li>
-					<li><a href="/admin/brand">Brand</a></li>
-					<li><a href="/admin/sneaker">Sneaker</a></li>
-					<li><a href="/admin/size">Size</a></li>
-					<li><a href="/admin/recipe">Recipe</a></li>
+					
 				</ul>
 			</div>
 		</div>

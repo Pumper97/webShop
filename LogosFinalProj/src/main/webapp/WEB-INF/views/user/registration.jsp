@@ -4,6 +4,9 @@
 <div class="row">
 	<div class="col-sm-12 col-xs-12">
 		<form:form class="form-horizontal" action="/registration" method="POST" modelAttribute="user">
+		<div class="form-group">
+						<label style="color:red;text-align:left;" for="email" class="col-sm-10 col-sm-offset-2 control-label"><form:errors path="email"/></label>
+					</div>
   			<div class="form-group">
 				<label for="email" class="col-sm-offset-2 col-sm-10"><form:errors path="email"/></label>
 			</div>

@@ -21,4 +21,8 @@ public interface SneakerService {
 
 	Page<Sneaker> findAll(Pageable pageable, SneakerFilter filter);
 
+	int findCount(int id);
+
+	List<Sneaker> findByUserId(int userId);
+
 }
